@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+  images: {
+    domains: ['images.ctfassets.net'], // For Contentful images if you add them later
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

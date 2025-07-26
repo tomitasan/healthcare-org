@@ -1,6 +1,5 @@
 import { getServices } from '@/lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Image from "next/image";
 
 export default async function Home() {
   const services = await getServices();
@@ -8,16 +7,6 @@ export default async function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-4xl">
-        {/* Keep your existing header */}
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        
         {/* Services Section from Contentful */}
         <section className="w-full">
           <h2 className="text-2xl font-bold mb-6">Our Healthcare Services</h2>

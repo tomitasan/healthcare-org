@@ -6,8 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { getServices } from '@/lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { Heart, Shield, Users, BookOpen, Mail, Phone, Calendar, ArrowRight, Menu, X } from 'lucide-react';
+import { Heart, Shield, Users, BookOpen, Mail, Phone, Calendar, ArrowRight, Menu, X, Link } from 'lucide-react';
 import logo from '@/public/logo_carol.png';
+import { FaWhatsapp } from 'react-icons/fa';
 
 
 export default async function Home() {
@@ -285,7 +286,7 @@ export default async function Home() {
 
             <Card className="text-center">
               <CardHeader>
-                <Phone className="h-8 w-8 text-[#b5a194] mx-auto mb-4" />
+                <FaWhatsapp className="h-8 w-8 text-[#b5a194] mx-auto mb-4" />
                 <CardTitle>Telefone</CardTitle>
               </CardHeader>
               <CardContent>
@@ -300,7 +301,7 @@ export default async function Home() {
               </CardHeader>
               <CardContent>
                 <Button className="bg-[#d4cac1] hover:bg-[#b5a194] text-white">
-                  Agendar Consulta
+                  <a href="https://api.whatsapp.com/send?phone=5511950402783&text=Olá,%20Carol!%20Gostaria%20de%20agendar%20uma%20consulta.">Agendar Consulta</a>
                 </Button>
               </CardContent>
             </Card>

@@ -16,22 +16,22 @@ export default async function Home() {
 
     const services = [
     {
-      icon: <Heart className="h-8 w-8 text-teal-600" />,
+      icon: <Heart className="h-8 w-8 text-[#b5a194]" />,
       title: "Cuidados Especializados",
       description: "Gestão personalizada de cuidados com foco na qualidade e humanização do atendimento."
     },
     {
-      icon: <Shield className="h-8 w-8 text-teal-600" />,
+      icon: <Shield className="h-8 w-8 text-[#b5a194]" />,
       title: "Segurança do Paciente",
       description: "Protocolos rigorosos de segurança para garantir o bem-estar e proteção dos pacientes."
     },
     {
-      icon: <Users className="h-8 w-8 text-teal-600" />,
+      icon: <Users className="h-8 w-8 text-[#b5a194]" />,
       title: "Capacitação de Equipes",
       description: "Treinamento e desenvolvimento de equipes de enfermagem para excelência no cuidado."
     },
     {
-      icon: <BookOpen className="h-8 w-8 text-teal-600" />,
+      icon: <BookOpen className="h-8 w-8 text-[#b5a194]" />,
       title: "Educação Continuada",
       description: "Programas de educação permanente baseados nas melhores práticas e evidências científicas."
     }
@@ -46,19 +46,19 @@ export default async function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
               <img src={logo.src} alt="Carol Lobato Saúde" className="h-10 w-auto" />
-              <div>
-                <h1 className="text-xl font-bold text-slate-900">Carol Lobato</h1>
-                <p className="text-sm text-teal-600">Assistência em Saúde com Foco na Pessoa</p>
+              <div className="text-[#b5a194]">
+                <h1 className="text-xl font-bold">Carol Lobato</h1>
+                <p className="text-sm">Assistência em Saúde com Foco na Pessoa</p>
               </div>
             </div>
             
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <a href="#inicio" className="text-slate-700 hover:text-teal-600 transition-colors">Início</a>
-              <a href="#servicos" className="text-slate-700 hover:text-teal-600 transition-colors">Serviços</a>
-              <a href="#blog" className="text-slate-700 hover:text-teal-600 transition-colors">Blog</a>
-              <a href="#sobre" className="text-slate-700 hover:text-teal-600 transition-colors">Sobre</a>
-              <a href="#contato" className="text-slate-700 hover:text-teal-600 transition-colors">Contato</a>
+            <nav className="hidden text-[#b5a194] md:flex space-x-8">
+              <a href="#inicio" className=" hover:text-[#b98872] transition-colors">Início</a>
+              <a href="#servicos" className=" hover:text-[#b98872] transition-colors">Serviços</a>
+              <a href="#blog" className=" hover:text-[#b98872] transition-colors">Blog</a>
+              <a href="#sobre" className=" hover:text-[#b98872] transition-colors">Sobre</a>
+              <a href="#contato" className=" hover:text-[#b98872] transition-colors">Contato</a>
             </nav>
 
             {/* Mobile menu button */}
@@ -72,13 +72,13 @@ export default async function Home() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden py-4 border-t">
+            <div className="text-[#b5a194] md:hidden py-4 border-t">
               <nav className="flex flex-col space-y-4">
-                <a href="#inicio" className="text-slate-700 hover:text-teal-600 transition-colors">Início</a>
-                <a href="#servicos" className="text-slate-700 hover:text-teal-600 transition-colors">Serviços</a>
-                <a href="#blog" className="text-slate-700 hover:text-teal-600 transition-colors">Blog</a>
-                <a href="#sobre" className="text-slate-700 hover:text-teal-600 transition-colors">Sobre</a>
-                <a href="#contato" className="text-slate-700 hover:text-teal-600 transition-colors">Contato</a>
+                <a href="#inicio" className="hover:text-[#b98872] transition-colors">Início</a>
+                <a href="#servicos" className="hover:text-[#b98872] transition-colors">Serviços</a>
+                <a href="#blog" className="hover:text-[#b98872] transition-colors">Blog</a>
+                <a href="#sobre" className="hover:text-[#b98872] transition-colors">Sobre</a>
+                <a href="#contato" className="hover:text-[#b98872] transition-colors">Contato</a>
               </nav>
             </div>
           )}
@@ -88,21 +88,21 @@ export default async function Home() {
       {/* Hero Section */}
       <section id="inicio" className="bg-gradient-to-br from-teal-50 to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
+          <div className="text-center text-[#b5a194]">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Excelência em
-              <span className="text-teal-600 block">Gestão de Cuidados</span>
+              <span className="block">Gestão de Cuidados</span>
             </h2>
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
               Especializada em gestão de cuidados em enfermagem, oferecendo soluções inovadoras 
               para melhorar a qualidade do atendimento e a segurança do paciente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-teal-600 hover:bg-teal-700">
+              <Button size="lg" className="bg-[#d4cac1] hover:bg-[#b5a194] text-white">
                 Conheça Nossos Serviços
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button size="lg" className="bg-[#d4cac1] hover:bg-[#b5a194] text-white">
                 Entre em Contato
               </Button>
             </div>
@@ -174,7 +174,7 @@ export default async function Home() {
                       : ''}
                     </span>
                   </div>
-                  <CardTitle className="text-xl hover:text-teal-600 transition-colors cursor-pointer">
+                  <CardTitle className="text-xl hover:text-[#b5a194] transition-colors cursor-pointer">
                     {typeof post.fields.title === 'string' || typeof post.fields.title === 'number'
                     ? post.fields.title
                     : ''}
@@ -192,7 +192,7 @@ export default async function Home() {
                       ? new Date(post.fields.date).toLocaleDateString('pt-BR')
                       : ''}
                     </span>
-                    <Button variant="ghost" size="sm" className="text-teal-600 hover:text-teal-700">
+                    <Button variant="ghost" size="sm" className="text-[#b5a194] hover:text-teal-700">
                       Ler mais
                       <ArrowRight className="ml-1 h-4 w-4" />
                     </Button>
@@ -229,23 +229,23 @@ export default async function Home() {
                 científicas e inovação.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Badge variant="outline" className="text-teal-600 border-teal-600">
+                <Badge variant="outline" className="text-[#b5a194] border-[#b5a194]">
                   Gestão de Cuidados
                 </Badge>
-                <Badge variant="outline" className="text-teal-600 border-teal-600">
+                <Badge variant="outline" className="text-[#b5a194] border-[#b5a194]">
                   Segurança do Paciente
                 </Badge>
-                <Badge variant="outline" className="text-teal-600 border-teal-600">
+                <Badge variant="outline" className="text-[#b5a194] border-[#b5a194]">
                   Educação em Saúde
                 </Badge>
-                <Badge variant="outline" className="text-teal-600 border-teal-600">
+                <Badge variant="outline" className="text-[#b5a194] border-[#b5a194]">
                   Qualidade Assistencial
                 </Badge>
               </div>
             </div>
             <div className="bg-gradient-to-br from-teal-100 to-blue-100 rounded-2xl p-8 text-center">
               <div className="bg-white rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                <Heart className="h-16 w-16 text-teal-600" />
+                <Heart className="h-16 w-16 text-[#b5a194]" />
               </div>
               <h4 className="text-2xl font-bold text-slate-900 mb-4">
                 Missão
@@ -275,7 +275,7 @@ export default async function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center">
               <CardHeader>
-                <Mail className="h-8 w-8 text-teal-600 mx-auto mb-4" />
+                <Mail className="h-8 w-8 text-[#b5a194] mx-auto mb-4" />
                 <CardTitle>E-mail</CardTitle>
               </CardHeader>
               <CardContent>
@@ -285,7 +285,7 @@ export default async function Home() {
 
             <Card className="text-center">
               <CardHeader>
-                <Phone className="h-8 w-8 text-teal-600 mx-auto mb-4" />
+                <Phone className="h-8 w-8 text-[#b5a194] mx-auto mb-4" />
                 <CardTitle>Telefone</CardTitle>
               </CardHeader>
               <CardContent>
@@ -295,11 +295,11 @@ export default async function Home() {
 
             <Card className="text-center">
               <CardHeader>
-                <Calendar className="h-8 w-8 text-teal-600 mx-auto mb-4" />
+                <Calendar className="h-8 w-8 text-[#b5a194] mx-auto mb-4" />
                 <CardTitle>Agendamento</CardTitle>
               </CardHeader>
               <CardContent>
-                <Button className="bg-teal-600 hover:bg-teal-700">
+                <Button className="bg-[#d4cac1] hover:bg-[#b5a194] text-white">
                   Agendar Consulta
                 </Button>
               </CardContent>
@@ -309,7 +309,7 @@ export default async function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-12">
+      <footer className="bg-[#b5a19b] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
@@ -317,10 +317,10 @@ export default async function Home() {
                 <img src={logo.src} alt="Carol Lobato Saúde" className="h-10 w-auto" />
                 <div>
                   <h4 className="text-lg font-bold">Carol Lobato</h4>
-                  <p className="text-sm text-slate-400">Assistência em Saúde com Foco na Pessoa</p>
+                  <p className="text-sm">Assistência em Saúde com Foco na Pessoa</p>
                 </div>
               </div>
-              <p className="text-slate-400 mb-4">
+              <p className="mb-4">
                 Especializada em gestão de cuidados em enfermagem, promovendo 
                 excelência e humanização no atendimento.
               </p>
@@ -328,7 +328,7 @@ export default async function Home() {
 
             <div>
               <h5 className="font-semibold mb-4">Links Rápidos</h5>
-              <ul className="space-y-2 text-slate-400">
+              <ul className="space-y-2">
                 <li><a href="#inicio" className="hover:text-white transition-colors">Início</a></li>
                 <li><a href="#servicos" className="hover:text-white transition-colors">Serviços</a></li>
                 <li><a href="#blog" className="hover:text-white transition-colors">Blog</a></li>
@@ -338,14 +338,14 @@ export default async function Home() {
 
             <div>
               <h5 className="font-semibold mb-4">Contato</h5>
-              <ul className="space-y-2 text-slate-400">
+              <ul className="space-y-2">
                 <li>carollobatosaude@gmail.com</li>
                 <li>(11) 95040-2783</li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
+          <div className="border-t border-slate-800 mt-8 pt-8 text-center">
             <p>&copy; 2025 Carol Lobato Saúde. Todos os direitos reservados.</p>
           </div>
         </div>

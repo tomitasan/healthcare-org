@@ -301,7 +301,7 @@ export default async function Home() {
               </CardHeader>
               <CardContent>
                 <Button className="bg-[#d4cac1] hover:bg-[#b5a194] text-white">
-                  <a href="https://api.whatsapp.com/send?phone=5511950402783&text=Olá,%20Carol!%20Gostaria%20de%20agendar%20uma%20consulta.">Agendar Consulta</a>
+                  <a href="https://api.whatsapp.com/send?phone=5511950402783&text=Olá,%20Carol!%20Gostaria%20de%20fazer%20um%20orçamento.">Fazer Orçamento</a>
                 </Button>
               </CardContent>
             </Card>

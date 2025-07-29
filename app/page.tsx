@@ -30,23 +30,23 @@ export default function Home() {
     const services = [
     {
       icon: <Heart className="h-8 w-8 text-[#b5a194]" />,
-      title: "Cuidados Especializados",
-      description: "Gestão personalizada de cuidados com foco na qualidade e humanização do atendimento."
+      title: "Acompanhamento integral em saúde",
+      description: "Assistência pré e pós-operatória, incluindo internações, emergências, procedimentos estéticos e ambulatoriais (home care)."
     },
     {
       icon: <Shield className="h-8 w-8 text-[#b5a194]" />,
-      title: "Segurança do Paciente",
-      description: "Protocolos rigorosos de segurança para garantir o bem-estar e proteção dos pacientes."
+      title: "Conformidade e segurança",
+      description: "Todos os serviços seguem a LGPD e regulamentações de saúde, garantindo ética e proteção de dados."
     },
     {
       icon: <Users className="h-8 w-8 text-[#b5a194]" />,
-      title: "Capacitação de Equipes",
-      description: "Treinamento e desenvolvimento de equipes de enfermagem para excelência no cuidado."
+      title: "Atendimento personalizado por perfil",
+      description: "Suporte especializado para idosos, gestantes, puérperas, recém-nascidos, adolescentes e pessoas com deficiência (PCD)."
     },
     {
       icon: <BookOpen className="h-8 w-8 text-[#b5a194]" />,
-      title: "Educação Continuada",
-      description: "Programas de educação permanente baseados nas melhores práticas e evidências científicas."
+      title: "Gestão profissional de saúde",
+      description: "Supervisão e coordenação de equipes multidisciplinares em ambientes hospitalares e residenciais."
     }
   ]
 

@@ -1,19 +1,31 @@
-'use client' // This is a client component
+"use client";
 
 import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { getServices } from '@/lib/contentful';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Heart, Shield, Users, BookOpen, Mail, Phone, Calendar, ArrowRight, Menu, X, Link } from 'lucide-react';
 import logo from '@/public/logo_carol.png';
 import { FaWhatsapp } from 'react-icons/fa';
+import { BlogSection } from '@/components/blog/blog-section';
+import { topics } from '@/components/data/topics';
+// import { getServices } from '@/lib/contentful';
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-
-export default async function Home() {
+export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const service = await getServices();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredTopics = topics.filter((topic) =>
+    topic.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    topic.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // const service = await getServices();
 
     const services = [
     {
@@ -145,7 +157,7 @@ export default async function Home() {
       </section>
 
       {/* Blog Section from Contentful */}
-      <section id="blog" className="py-20 bg-slate-50">
+      {/* <section id="blog" className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -209,6 +221,9 @@ export default async function Home() {
             </Button>
           </div>
         </div>
+      </section> */}
+      <section id="blog" className="py-20 bg-slate-50">
+        <BlogSection allTopics={filteredTopics}/>
       </section>
 
       {/* About Section */}

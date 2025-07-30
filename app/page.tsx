@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -8,21 +8,11 @@ import { Heart, Shield, Users, BookOpen, Mail, Phone, Calendar, ArrowRight, Menu
 import logo from '@/public/logo_carol.png';
 import { FaWhatsapp } from 'react-icons/fa';
 import { BlogSection } from '@/components/blog/blog-section';
-import { getTopicsWithLikes } from '@/components/data/topics';
+import { topics } from '@/components/data/topics'; 
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [topics, setTopics] = useState<any[]>([]);
-
-  // Fetch topics with like counts
-  useEffect(() => {
-    async function fetchTopics() {
-      const topicsWithLikes = await getTopicsWithLikes();
-      setTopics(topicsWithLikes);
-    }
-    fetchTopics();
-  }, []);
 
   const filteredTopics = topics.filter((topic) =>
     topic.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -114,11 +104,11 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-[#d4cac1] hover:bg-[#b5a194] text-white">
-                Conheça Nossos Serviços
+                <a href="#servicos">Conheça Nossos Serviços</a>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" className="bg-[#d4cac1] hover:bg-[#b5a194] text-white">
-                Entre em Contato
+                <a href="#contato">Entre em Contato</a>
               </Button>
             </div>
           </div>

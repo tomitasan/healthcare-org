@@ -15,6 +15,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Clock, Heart } from 'lucide-react';
+import { updateTopicLike } from '@/app/actions';
 
 interface TopicCardProps {
   topic: Topic;
@@ -22,15 +23,33 @@ interface TopicCardProps {
 
 export function TopicCard({ topic }: TopicCardProps) {
   const [isLiked, setIsLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(0);
+  const [likeCount, setLikeCount] = useState(topic.likeCount || 0);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLike = () => {
-    if (isLiked) {
-      setLikeCount(likeCount - 1);
-    } else {
-      setLikeCount(likeCount + 1);
+  const handleLike = async () => {
+    const newIsLiked = !isLiked;
+    const newLikeCount = newIsLiked ? likeCount + 1 : likeCount - 1;
+    
+    // Optimistic UI update
+    setIsLiked(newIsLiked);
+    setLikeCount(newLikeCount);
+    setIsLoading(true);
+    
+    try {
+      // Update in the background
+      const result = await updateTopicLike(topic.id, newLikeCount);
+      
+      if (!result.success) {
+        // Revert on error
+        setLikeCount(topic.likeCount || 0);
+        setIsLiked(false);
+      }
+    } catch (error) {
+      setLikeCount(topic.likeCount || 0);
+      setIsLiked(false);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLiked(!isLiked);
   };
 
   return (
@@ -45,12 +64,19 @@ export function TopicCard({ topic }: TopicCardProps) {
               variant="ghost"
               size="icon"
               onClick={handleLike}
-              aria-label="Like topic"
+              disabled={isLoading}
+              aria-label={isLiked ? "Unlike topic" : "Like topic"}
               className="text-muted-foreground hover:text-red-500 h-8 w-8"
             >
-              <Heart className={`h-5 w-5 transition-colors ${isLiked ? 'fill-red-500 text-red-500' : ''}`} />
+              {isLoading ? (
+                <div className="animate-spin rounded-full border-2 border-t-transparent border-current h-4 w-4" />
+              ) : (
+                <Heart className={`h-5 w-5 transition-colors ${isLiked ? 'fill-red-500 text-red-500' : ''}`} />
+              )}
             </Button>
-            <span className="text-xs text-muted-foreground font-medium w-8 text-center">{likeCount}</span>
+            <span className="text-xs text-muted-foreground font-medium w-8 text-center">
+              {likeCount}
+            </span>
           </div>
         </div>
         <CardTitle className="font-headline text-xl mb-2">{topic.title}</CardTitle>

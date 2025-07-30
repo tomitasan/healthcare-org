@@ -7,7 +7,7 @@ import { TopicCard } from './topic-card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
 
-const TOPICS_PER_PAGE = 4;
+const TOPICS_PER_PAGE = 3;
 
 interface BlogSectionProps {
   allTopics: Topic[];

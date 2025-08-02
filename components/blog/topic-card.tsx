@@ -14,7 +14,7 @@ import { Heart } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/topics'; // Use your Render URL
+const API_URL = 'https://healthcare-likes-api.onrender.com/topics'; // Use your Render URL
 
 interface TopicCardProps {
   topic: Topic;

@@ -32,18 +32,25 @@ export function TopicCard({ topic }: TopicCardProps) {
   }, [topic.id]);
 
   const handleLike = async () => {
-    if (isLiked) return;
-    
-    const newLikes = likes + 1;
-    try {
-      await axios.patch(`${API_URL}/${topic.id}`, { likes: newLikes });
-      setLikes(newLikes);
-      setIsLiked(true);
-      // Optional: Store in localStorage to prevent multiple likes
-      localStorage.setItem(`liked_${topic.id}`, 'true');
-    } catch (error) {
-      console.error("Failed to update likes:", error);
+    if (isLiked) {
+      setLikes(likes - 1);
+      setIsLiked(false);
+      // Optional: Remove from localStorage if you want to allow unliking
+      localStorage.removeItem(`liked_${topic.id}`);
+      return;
+    } else {
+      const newLikes = likes + 1;
+      try {
+        await axios.patch(`${API_URL}/${topic.id}`, { likes: newLikes });
+        setLikes(newLikes);
+        setIsLiked(true);
+        // Optional: Store in localStorage to prevent multiple likes
+        localStorage.setItem(`liked_${topic.id}`, 'true');
+      } catch (error) {
+        console.error("Failed to update likes:", error);
+      }
     }
+    setIsLiked(!isLiked);
   };
 
   return (

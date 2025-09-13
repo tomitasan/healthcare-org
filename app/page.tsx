@@ -91,12 +91,13 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="inicio" className="bg-gradient-to-br from-teal-50 to-blue-50 py-20">
+      <section id="inicio" className="bg-gradient-to-br from-[#faf7f2] to-[#fff] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center text-[#b5a194]">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Excelência em
               <span className="block">Gestão de Cuidados</span>
+              <span className="block text-4xl">Com Foco na Pessoa</span>
             </h2>
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
               Especializada em gestão de cuidados em enfermagem, oferecendo soluções inovadoras 
@@ -186,16 +187,38 @@ export default function Home() {
                 </Badge>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-teal-100 to-blue-100 rounded-2xl p-8 text-center">
-              <div className="bg-white rounded-full w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                <Heart className="h-16 w-16 text-[#b5a194]" />
-              </div>
-              <h4 className="text-2xl font-bold text-slate-900 mb-4">
+            <div className="bg-gradient-to-br from-[#faf7f2] to-[#fff] rounded-2xl p-8 text-center">
+              <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                Nossa Visão, Missão e Valores
+              </h3>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 mt-8">
+                Visão
+              </h2>
+              <p className="text-lg text-slate-600">
+                Ser referência em cuidados de saúde centrados na pessoa, promovendo excelência, 
+                humanização e inovação, em parceria com toda a equipe multidisciplinar.
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 mt-6">
                 Missão
-              </h4>
-              <p className="text-slate-600">
-                Promover a excelência em cuidados de enfermagem através da gestão 
-                baseada em evidências, capacitação profissional e inovação tecnológica.
+              </h2>
+              <p className="text-lg text-slate-600">
+                Oferecer assistência segura, completa e humanizada, integrando ciência, empatia
+                e comunicação transparente com os pacientes, familiaras e profissio
+              </p>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4 mt-6">
+                Valores
+              </h2>
+              <p className="text-lg text-slate-600">
+                <ul className="list-disc list-inside grid grid-cols-2 align-middle">
+                  <li>Empatia</li>
+                  <li>Excelência</li>
+                  <li>Comunicação Eficaz</li>
+                  <li>Inovação</li>
+                  <li>Ética</li>
+                  <li>Colaboração</li>
+                  <li>Respeito à diversidade</li>
+                  <li>Compromisso com paciences e familiares</li>
+                </ul> 
               </p>
             </div>
           </div>
